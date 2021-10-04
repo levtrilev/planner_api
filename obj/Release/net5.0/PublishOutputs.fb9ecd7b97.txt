@@ -5,9 +5,8 @@ C:\Users\Lev\source\repos\PlannerAPI2\obj\Release\net5.0\PubTmp\Out\appsettings.
 C:\Users\Lev\source\repos\PlannerAPI2\obj\Release\net5.0\PubTmp\Out\PlannerAPI2.dll
 C:\Users\Lev\source\repos\PlannerAPI2\obj\Release\net5.0\PubTmp\Out\PlannerAPI2.runtimeconfig.json
 C:\Users\Lev\source\repos\PlannerAPI2\obj\Release\net5.0\PubTmp\Out\PlannerAPI2.pdb
-C:\Users\Lev\source\repos\PlannerAPI2\obj\Release\net5.0\PubTmp\Out\AutoMapper.dll
-C:\Users\Lev\source\repos\PlannerAPI2\obj\Release\net5.0\PubTmp\Out\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Lev\source\repos\PlannerAPI2\obj\Release\net5.0\PubTmp\Out\Humanizer.dll
+C:\Users\Lev\source\repos\PlannerAPI2\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Lev\source\repos\PlannerAPI2\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\Lev\source\repos\PlannerAPI2\obj\Release\net5.0\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Lev\source\repos\PlannerAPI2\obj\Release\net5.0\PubTmp\Out\Microsoft.CodeAnalysis.dll

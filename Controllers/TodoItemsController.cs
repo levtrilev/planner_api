@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 using PlannerAPI2.Models;
 
 namespace PlannerAPI2.Controllers
@@ -21,6 +22,7 @@ namespace PlannerAPI2.Controllers
         }
 
         // GET: api/TodoItems/title/иван
+        //[Authorize(Roles = "admin")]
         [Route("title/{titleString}")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems(string titleString)
