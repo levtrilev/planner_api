@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\app_deploy\planner_api2</_PublishTargetUrl>
+    <History>True|2021-10-04T13:19:48.0649922Z;True|2021-10-04T16:12:07.3031866+03:00;True|2021-10-04T15:58:28.8354047+03:00;True|2021-10-01T16:05:02.4500553+03:00;True|2021-10-01T15:58:18.2265289+03:00;True|2021-09-30T20:34:46.5665678+03:00;True|2021-09-29T20:15:22.0232419+03:00;True|2021-09-29T20:10:15.3699129+03:00;True|2021-09-29T18:58:27.9161720+03:00;True|2021-09-29T15:45:19.0015091+03:00;True|2021-09-29T15:08:58.6443422+03:00;True|2021-09-29T14:32:06.7679993+03:00;True|2021-09-28T01:02:12.9429971+03:00;</History>
+  </PropertyGroup>
+</Project>
