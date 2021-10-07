@@ -37,5 +37,20 @@ namespace PlannerAPI2.Controllers
                 return await _context.Users.ToListAsync();
             }
         }
+
+        // GET: api/Users/ivan2000@mail.ru
+        [Authorize]
+        [HttpGet("{email}")]
+        public async Task<ActionResult<IEnumerable<User>>> GetTodoItem(string email)
+        {
+            //var user = await _context.Users.FindAsync(email);
+            var users = await _context.Users.Where(item => item.Email == email).ToListAsync();
+            if (users == null)
+            {
+                return NotFound();
+            }
+
+            return users;
+        }
     }
 }

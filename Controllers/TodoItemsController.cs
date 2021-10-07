@@ -10,6 +10,7 @@ using PlannerAPI2.Models;
 
 namespace PlannerAPI2.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class TodoItemsController : ControllerBase
@@ -23,37 +24,41 @@ namespace PlannerAPI2.Controllers
 
         // GET: api/TodoItems/title/иван
         //[Authorize(Roles = "admin")]
-        [Route("title/{titleString}")]
+        [Authorize]
+        [Route("title/{titleString}/user/{userId}")]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems(string titleString)
+        public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems(string titleString, int userId)
         {
             if (titleString != null && titleString.Length > 0)
             {
-                return await _context.TodoItems.Where(item => item.Title.Contains(titleString)).OrderBy(item => item.Priority).ToListAsync();
+                return await _context.TodoItems.Where(item => item.Title.Contains(titleString) && item.UserId == userId).OrderBy(item => item.Priority).ToListAsync();
             }
             else
             {
-                return await _context.TodoItems.OrderBy(item => item.Priority).ToListAsync();
+                return await _context.TodoItems.Where(item => item.UserId == userId).OrderBy(item => item.Priority).ToListAsync();
             }
         }
 
         // GET: api/TodoItems || api/TodoItems?title=иван
+        [Authorize]
+        [Route("user/{userId}")]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems()
+        public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems(int userId)
         {
             string titleString = Request.Query.FirstOrDefault(p => p.Key == "title").Value;
             if (titleString != null && titleString.Length > 0)
             {
-                return await _context.TodoItems.Where(item => item.Title.Contains(titleString)).OrderBy(item => item.Priority).ToListAsync();
+                return await _context.TodoItems.Where(item => item.Title.Contains(titleString) && item.UserId == userId).OrderBy(item => item.Priority).ToListAsync();
             }
             else
             {
-                return await _context.TodoItems.OrderBy(item => item.Priority).ToListAsync();
+                return await _context.TodoItems.Where(item => item.UserId == userId).OrderBy(item => item.Priority).ToListAsync();
             }
         }
 
 
         // GET: api/TodoItems/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<TodoItem>> GetTodoItem(int id)
         {
