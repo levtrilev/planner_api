@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using PlannerAPI2.GraphQL;
 
 namespace PlannerAPI2
 {
@@ -59,6 +60,8 @@ namespace PlannerAPI2
                                      };
                                  });
             services.AddControllers();
+            services.AddGraphQLServer()
+                .AddQueryType<Queries>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -81,6 +84,7 @@ namespace PlannerAPI2
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapGraphQL("/graphql");
             });
         }
     }
